@@ -1,0 +1,22 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: order
+  datasource:
+    username: postgres
+    password: root
+    url: jdbc:postgresql://localhost:35432/order
+    driver-class-name: org.postgresql.Driver
+    hikari:
+      maximum-pool-size: 3
+  jpa:
+    database: postgresql
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        format_sql: true
+        globally_quoted_identifiers: true
