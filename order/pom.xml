@@ -37,6 +37,13 @@
       <artifactId>postgresql</artifactId>
       <version>${postgres.version}</version>
     </dependency>
+    <!--    Feign clients    -->
+    <dependency>
+      <groupId>rs.profi</groupId>
+      <artifactId>clients</artifactId>
+      <version>1.0</version>
+      <scope>compile</scope>
+    </dependency>
   </dependencies>
 
 </project>

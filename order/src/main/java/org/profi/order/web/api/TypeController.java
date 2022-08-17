@@ -16,14 +16,14 @@ import org.springframework.web.bind.annotation.RestController;
 @Slf4j
 @RestController
 //@MeasurePerformance
-@RequestMapping("api/v1/type")
+@RequestMapping("api/v1/order")
 @RequiredArgsConstructor
 public class TypeController {
 
   private final TypeService typeService;
   private final TypeMapper typeMapper;
 
-  @GetMapping(value = "/", produces = MediaType.APPLICATION_JSON_VALUE)
+  @GetMapping(value = "/type", produces = MediaType.APPLICATION_JSON_VALUE)
   public List<TypeDto> getTypes() {
     List<Type> types = typeService.getAll();
     List<TypeDto> dtos = types.stream().map(typeMapper::typeToDto).collect(Collectors.toList());

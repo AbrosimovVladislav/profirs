@@ -23,7 +23,7 @@ public class OrderController {
   private final OrderService orderService;
   private final OrderMapper orderMapper;
 
-  @GetMapping(value = "/", produces = MediaType.APPLICATION_JSON_VALUE)
+  @GetMapping(value = "/order", produces = MediaType.APPLICATION_JSON_VALUE)
   public List<OrderDto> getOrders() {
     List<Order> orders = orderService.getAll();
     List<OrderDto> dtos = orders.stream().map(orderMapper::orderToDto)

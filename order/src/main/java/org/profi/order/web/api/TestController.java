@@ -10,11 +10,11 @@ import org.springframework.web.bind.annotation.RestController;
 @Slf4j
 @RestController
 //@MeasurePerformance
-@RequestMapping("api/v1/test")
+@RequestMapping("api/v1/order")
 @RequiredArgsConstructor
 public class TestController {
 
-  @GetMapping(value = "/", produces = MediaType.APPLICATION_JSON_VALUE)
+  @GetMapping(value = "/test", produces = MediaType.APPLICATION_JSON_VALUE)
   public String test() {
     log.info("1");
     return "1";
