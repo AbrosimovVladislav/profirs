@@ -1,0 +1,7 @@
+### Get all orders
+GET http://localhost:8083/api/v1/order/order
+Accept: application/json
+
+### Get all types
+GET http://localhost:8083/api/v1/order/type
+Accept: application/json
