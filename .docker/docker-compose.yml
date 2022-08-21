@@ -23,6 +23,17 @@ services:
     networks:
       - spring
 
+  spring-admin:
+    image: profidocker/spring-admin:1.0
+    container_name: spring-admin
+    ports:
+      - "8085:8085"
+    depends_on:
+      - zipkin
+      - eureka-server
+    networks:
+      - spring
+
   apigw:
     image: profidocker/apigw:1.0
     container_name: apigw
@@ -31,6 +42,7 @@ services:
     depends_on:
       - zipkin
       - eureka-server
+      - spring-admin
     networks:
       - spring
 
@@ -42,6 +54,7 @@ services:
     depends_on:
       - zipkin
       - eureka-server
+      - spring-admin
       - apigw
     networks:
       - spring

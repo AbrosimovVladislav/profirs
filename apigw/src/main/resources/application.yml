@@ -6,6 +6,10 @@ spring:
     name: api-gateway
   zipkin:
     base-url: http://zipkin:9411
+  boot:
+    admin:
+      client:
+        url: http://spring-admin:8085
   cloud:
     gateway:
       routes:
@@ -13,6 +17,19 @@ spring:
           uri: lb://ORDER
           predicates:
             - Path=/api/v1/order/**
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    health:
+      show-details: always
+
+logging:
+  file:
+    name: profi.log
 
 eureka:
   client:

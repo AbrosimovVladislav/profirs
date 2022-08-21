@@ -20,8 +20,26 @@ spring:
         dialect: org.hibernate.dialect.PostgreSQLDialect
         format_sql: true
         globally_quoted_identifiers: true
+  boot:
+    admin:
+      client:
+        url: http://spring-admin:8085
   zipkin:
     base-url: http://zipkin:9411
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    health:
+      show-details: always
+
+logging:
+  file:
+    name: profi.log
+
 eureka:
   client:
     service-url:
