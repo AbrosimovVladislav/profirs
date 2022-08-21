@@ -5,9 +5,9 @@ spring:
   application:
     name: order
   datasource:
-    username: nbkftggqxzkttm
-    password: f8de73cbd4e8818f167f7ff086b07718c8daf636951c651942987eb4455f9f14
-    url: jdbc:postgresql://ec2-52-19-188-149.eu-west-1.compute.amazonaws.com:5432/dbjtieev5doea0
+    username: postgres
+    password: root
+    url: jdbc:postgresql://localhost:35432/order
     driver-class-name: org.postgresql.Driver
     hikari:
       maximum-pool-size: 3
