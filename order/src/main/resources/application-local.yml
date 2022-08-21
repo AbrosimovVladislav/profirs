@@ -21,10 +21,10 @@ spring:
         format_sql: true
         globally_quoted_identifiers: true
   zipkin:
-    base-url: http://zipkin:9411
+    base-url: http://localhost:9411
 eureka:
   client:
     service-url:
-      defaultZone: http://eureka-server:8761/eureka
+      defaultZone: http://localhost:8761/eureka
   instance:
     prefer-ip-address: true

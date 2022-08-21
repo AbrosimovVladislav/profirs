@@ -7,6 +7,7 @@ services:
   db-order:
     image: postgres
     restart: always
+    container_name: postgres
     environment:
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=root
@@ -15,6 +16,8 @@ services:
       - ./init-gunmarketx.sql:/docker-entrypoint-initdb.d/init-gunmarketx.sql
     ports:
       - 35432:5432
+    networks:
+      - spring
 
   zipkin:
     image: openzipkin/zipkin
@@ -24,3 +27,35 @@ services:
     networks:
       - spring
 
+  eureka-server:
+    image: profidocker/eureka-server:1.0
+    container_name: eureka-server
+    ports:
+      - "8761:8761"
+    depends_on:
+      - zipkin
+    networks:
+      - spring
+
+  apigw:
+    image: profidocker/apigw:1.0
+    container_name: apigw
+    ports:
+      - "8083:8083"
+    depends_on:
+      - zipkin
+      - eureka-server
+    networks:
+      - spring
+
+  order:
+    image: profidocker/order:1.0
+    container_name: order
+    ports:
+      - "8080:8080"
+    depends_on:
+      - zipkin
+      - eureka-server
+      - apigw
+    networks:
+      - spring
