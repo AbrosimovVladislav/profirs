@@ -3,6 +3,7 @@ package org.profi.order.service;
 import java.util.List;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.profi.order.exception.OrderNotFoundException;
 import org.profi.order.model.Order;
 import org.profi.order.repo.OrderRepo;
 import org.springframework.stereotype.Service;
@@ -19,6 +20,14 @@ public class OrderService {
   }
 
   public Order save(Order order) {
+    return orderRepo.save(order);
+  }
+
+  public Order findById(Long orderId) {
+    return orderRepo.findById(orderId).orElseThrow(() -> new OrderNotFoundException(orderId));
+  }
+
+  public Order update(Order order) {
     return orderRepo.save(order);
   }
 }

@@ -1,0 +1,22 @@
+### Set order in progress with fined specialist
+PATCH http://localhost:8083/api/v1/order/order
+Content-Type: application/json
+
+{
+  "orderId": 1,
+  "orderStatus": "IN_PROGRESS",
+  "specialistId": 1
+}
+
+### Edit order
+
+PATCH http://localhost:8083/api/v1/order/order
+Content-Type: application/json
+
+{
+  "orderId": 2,
+  "name": "Fix my conditioner, plz, plz",
+  "description": "I need to fix my air conditioner, there is 39 at the street ASAP"
+}
+
+

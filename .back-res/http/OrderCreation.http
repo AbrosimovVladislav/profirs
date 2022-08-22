@@ -1,4 +1,4 @@
-### Send POST request with json body
+### Create order
 POST http://localhost:8083/api/v1/order/order
 Content-Type: application/json
 
