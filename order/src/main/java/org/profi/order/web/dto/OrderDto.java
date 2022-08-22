@@ -8,5 +8,11 @@ import lombok.Data;
 public class OrderDto {
 
   private String name;
-  private String type;
+  private String category;
+  private String description;
+  private Long customerId;
+  private String customerName;
+  private Long specialistId;
+  private String specialistName;
+  private String orderStatus;
 }

@@ -1,12 +1,11 @@
 package org.profi.order.model;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.Table;
 import lombok.AllArgsConstructor;
-import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -18,15 +17,15 @@ import lombok.experimental.Accessors;
 @NoArgsConstructor
 @AllArgsConstructor
 @Accessors(chain = true)
-public class Type {
+public class Person {
 
-  public static final String TYPE_ID = "type_id";
+  public static final String PERSON_ID = "person_id";
 
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
-  private Long typeId;
+  @Column(name = PERSON_ID, length = 8, nullable = false)
+  private Long personId;
 
   private String name;
+
 }
-
-
