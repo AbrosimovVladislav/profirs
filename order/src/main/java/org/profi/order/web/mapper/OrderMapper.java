@@ -29,6 +29,7 @@ public class OrderMapper {
 
   public OrderDto orderToDto(Order order) {
     return OrderDto.builder()
+        .orderId(order.getOrderId())
         .name(order.getName())
         .category(order.getCategory().getShowName())
         .description(order.getDescription())

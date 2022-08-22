@@ -7,6 +7,7 @@ import lombok.Data;
 @Builder
 public class OrderDto {
 
+  private Long orderId;
   private String name;
   private String category;
   private String description;
