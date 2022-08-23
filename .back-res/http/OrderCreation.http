@@ -7,7 +7,7 @@ Content-Type: application/json
   "orderStatus": "DRAFT",
   "customerId": 1,
   "specialistId": null,
-  "category": "Air conditioner repair master",
+  "category": "Air conditioning master",
   "description": "I need to fix my air conditioner, there is 39 at the street"
 }
 
