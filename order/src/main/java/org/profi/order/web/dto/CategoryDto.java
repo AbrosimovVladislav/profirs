@@ -7,5 +7,9 @@ import lombok.Data;
 @Builder
 public class CategoryDto {
 
-  private String name;
+  private Long categoryId;
+  private String firstLevel;
+  private String secondLevel;
+  private String thirdLevel;
+  private String showName;
 }

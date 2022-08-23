@@ -1,7 +1,6 @@
 package org.profi.order.web.api;
 
 import java.util.List;
-import java.util.stream.Collectors;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.profi.order.model.Category;
@@ -26,8 +25,7 @@ public class CategoryController {
   @GetMapping(value = "/category", produces = MediaType.APPLICATION_JSON_VALUE)
   public List<CategoryDto> getCategories() {
     List<Category> categories = categoryService.getAll();
-    List<CategoryDto> dtos = categories.stream().map(categoryMapper::categoryToDto)
-        .collect(Collectors.toList());
+    List<CategoryDto> dtos = categoryMapper.categoriesToDtos(categories);
     log.info("GetCategories request: " + dtos);
     return dtos;
   }

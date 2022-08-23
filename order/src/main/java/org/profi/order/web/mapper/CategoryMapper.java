@@ -15,7 +15,11 @@ public class CategoryMapper {
 
   public CategoryDto categoryToDto(Category category) {
     return CategoryDto.builder()
-        .name(category.getShowName())
+        .categoryId(category.getCategoryId())
+        .firstLevel(category.getFirstLevel())
+        .secondLevel(category.getSecondLevel())
+        .thirdLevel(category.getThirdLevel())
+        .showName(category.getShowName())
         .build();
   }
 }

@@ -1,7 +1,6 @@
 package org.profi.order.web.api;
 
 import java.util.List;
-import java.util.stream.Collectors;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.profi.order.model.Order;
@@ -48,11 +47,9 @@ public class OrderController {
   }
 
   @GetMapping(value = "/order", produces = MediaType.APPLICATION_JSON_VALUE)
-
   public List<OrderDto> getOrders() {
     List<Order> orders = orderService.getAll();
-    List<OrderDto> dtos = orders.stream().map(orderMapper::orderToDto)
-        .collect(Collectors.toList());
+    List<OrderDto> dtos = orderMapper.ordersToDtos(orders);
     log.info("GetOrders request: " + dtos);
     return dtos;
   }

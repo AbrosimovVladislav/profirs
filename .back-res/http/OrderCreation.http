@@ -11,3 +11,16 @@ Content-Type: application/json
   "description": "I need to fix my air conditioner, there is 39 at the street"
 }
 
+### Create order
+POST http://localhost:8083/api/v1/order/order
+Content-Type: application/json
+
+{
+  "name": "English IELTS preparation",
+  "orderStatus": "DRAFT",
+  "customerId": 2,
+  "specialistId": null,
+  "category": "English tutor",
+  "description": "I need to learn specific english for prepare to IELTS exam"
+}
+
