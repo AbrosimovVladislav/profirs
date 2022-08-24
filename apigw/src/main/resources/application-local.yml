@@ -1,19 +1,21 @@
+server:
+  port: 38083
 spring:
   zipkin:
-    base-url: http://localhost:9411
+    base-url: http://localhost:39411
   boot:
     admin:
       client:
-        url: http://localhost:8085
+        url: http://localhost:38085
   cloud:
     gateway:
       routes:
         - id: order
-          uri: http://localhost:8080
+          uri: http://localhost:38080
           predicates:
             - Path=/api/v1/order/**
 
 eureka:
   client:
     service-url:
-      defaultZone: http://localhost:8761/eureka
+      defaultZone: http://localhost:38761/eureka

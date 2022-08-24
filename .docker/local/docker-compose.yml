@@ -19,31 +19,31 @@ services:
     networks:
       - spring
 
-  zipkin:
+  zipkin-local:
     image: openzipkin/zipkin
-    container_name: zipkin
+    container_name: zipkin-local
     ports:
-      - "9411:9411"
+      - "39411:9411"
     networks:
       - spring
 
-  eureka-server:
+  eureka-server-local:
     image: profidocker/eureka-server:1.0
-    container_name: eureka-server
+    container_name: eureka-server-local
     ports:
-      - "8761:8761"
+      - "38761:8761"
     depends_on:
-      - zipkin
+      - zipkin-local
     networks:
       - spring
 
-  spring-admin:
+  spring-admin-local:
     image: profidocker/spring-admin:1.0
-    container_name: spring-admin
+    container_name: spring-admin-local
     ports:
-      - "8085:8085"
+      - "38085:8085"
     depends_on:
-      - zipkin
-      - eureka-server
+      - zipkin-local
+      - eureka-server-local
     networks:
       - spring

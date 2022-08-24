@@ -24,3 +24,29 @@ Content-Type: application/json
   "description": "I need to learn specific english for prepare to IELTS exam"
 }
 
+### Create order local
+POST http://localhost:38083/api/v1/order/order
+Content-Type: application/json
+
+{
+  "name": "Fix my conditioner",
+  "orderStatus": "DRAFT",
+  "customerId": 1,
+  "specialistId": null,
+  "category": "Air conditioning master",
+  "description": "I need to fix my air conditioner, there is 39 at the street"
+}
+
+### Create order local
+POST http://localhost:38083/api/v1/order/order
+Content-Type: application/json
+
+{
+  "name": "English IELTS preparation",
+  "orderStatus": "DRAFT",
+  "customerId": 2,
+  "specialistId": null,
+  "category": "English tutor",
+  "description": "I need to learn specific english for prepare to IELTS exam"
+}
+

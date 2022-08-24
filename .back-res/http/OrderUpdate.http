@@ -19,4 +19,24 @@ Content-Type: application/json
   "description": "I need to finish my IELTS preparation in 3 weeks"
 }
 
+### Set order in progress with fined specialist local
+PATCH http://localhost:38083/api/v1/order/order
+Content-Type: application/json
+
+{
+  "orderId": 1,
+  "orderStatus": "IN_PROGRESS",
+  "specialistId": 1
+}
+
+### Edit order local
+
+PATCH http://localhost:38083/api/v1/order/order
+Content-Type: application/json
+
+{
+  "orderId": 2,
+  "name": "English IELTS preparation",
+  "description": "I need to finish my IELTS preparation in 3 weeks"
+}
 

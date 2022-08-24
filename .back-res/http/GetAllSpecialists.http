@@ -1,3 +1,7 @@
 ### Get all orders
 GET http://localhost:8083/api/v1/order/specialist
 Accept: application/json
+
+### Get all orders local
+GET http://localhost:38083/api/v1/order/specialist
+Accept: application/json

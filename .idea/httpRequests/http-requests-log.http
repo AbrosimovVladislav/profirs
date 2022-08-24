@@ -1,0 +1,364 @@
+GET http://localhost:8083/api/v1/order/specialist
+Accept: application/json
+
+<> 2022-08-24T094342.200.json
+
+###
+
+GET http://localhost:8083/api/v1/order/order
+Accept: application/json
+
+<> 2022-08-24T094337.200.json
+
+###
+
+GET http://localhost:8083/api/v1/order/category
+Accept: application/json
+
+<> 2022-08-24T094332.200.json
+
+###
+
+GET http://localhost:8083/api/v1/order/category
+Accept: application/json
+
+<> 2022-08-24T094329.503.json
+
+###
+
+GET http://localhost:38083/api/v1/order/order
+Accept: application/json
+
+<> 2022-08-24T094142.200.json
+
+###
+
+GET http://localhost:38083/api/v1/order/category
+Accept: application/json
+
+<> 2022-08-24T094138.200.json
+
+###
+
+GET http://localhost:38083/api/v1/order/category
+Accept: application/json
+
+<> 2022-08-24T094050.500.json
+
+###
+
+GET http://localhost:38083/api/v1/order/order
+Accept: application/json
+
+<> 2022-08-24T093509.200.json
+
+###
+
+PATCH http://localhost:38083/api/v1/order/order
+Content-Type: application/json
+
+{
+  "orderId": 2,
+  "name": "English IELTS preparation",
+  "description": "I need to finish my IELTS preparation in 3 weeks"
+}
+
+<> 2022-08-24T093507.200.json
+
+###
+
+PATCH http://localhost:38083/api/v1/order/order
+Content-Type: application/json
+
+{
+  "orderId": 1,
+  "orderStatus": "IN_PROGRESS",
+  "specialistId": 1
+}
+
+<> 2022-08-24T093505.200.json
+
+###
+
+PATCH http://localhost:8083/api/v1/order/order
+Content-Type: application/json
+
+{
+  "orderId": 1,
+  "orderStatus": "IN_PROGRESS",
+  "specialistId": 1
+}
+
+###
+
+POST http://localhost:38083/api/v1/order/order
+Content-Type: application/json
+
+{
+  "name": "English IELTS preparation",
+  "orderStatus": "DRAFT",
+  "customerId": 2,
+  "specialistId": null,
+  "category": "English tutor",
+  "description": "I need to learn specific english for prepare to IELTS exam"
+}
+
+<> 2022-08-24T093449.200.json
+
+###
+
+POST http://localhost:38083/api/v1/order/order
+Content-Type: application/json
+
+{
+  "name": "Fix my conditioner",
+  "orderStatus": "DRAFT",
+  "customerId": 1,
+  "specialistId": null,
+  "category": "Air conditioning master",
+  "description": "I need to fix my air conditioner, there is 39 at the street"
+}
+
+<> 2022-08-24T093447.200.json
+
+###
+
+GET http://localhost:38083/api/v1/order/specialist
+Accept: application/json
+
+<> 2022-08-24T093439.200.json
+
+###
+
+GET http://localhost:38083/api/v1/order/category
+Accept: application/json
+
+<> 2022-08-24T093432.200.json
+
+###
+
+GET http://localhost:38083/api/v1/order/order
+Accept: application/json
+
+<> 2022-08-24T093308.200.json
+
+###
+
+GET http://localhost:38083/api/v1/order/category
+Accept: application/json
+
+<> 2022-08-24T093259.200.json
+
+###
+
+GET http://localhost:8083/api/v1/order/category
+Accept: application/json
+
+###
+
+GET http://localhost:8083/api/v1/order/category
+Accept: application/json
+
+###
+
+GET http://localhost:8083/api/v1/order/order
+Accept: application/json
+
+<> 2022-08-21T150552.200.json
+
+###
+
+GET http://localhost:8083/api/v1/order/order
+Accept: application/json
+
+<> 2022-08-21T150427.200.json
+
+###
+
+GET http://localhost:8083/api/v1/order/order
+Accept: application/json
+
+<> 2022-08-21T150025.200.json
+
+###
+
+GET http://localhost:8083/api/v1/order/order
+Accept: application/json
+
+<> 2022-08-21T145929.200.json
+
+###
+
+GET http://localhost:8080/api/v1/order/order
+Accept: application/json
+
+<> 2022-08-21T145927.200.json
+
+###
+
+GET http://localhost:8083/api/v1/order/order
+Accept: application/json
+
+<> 2022-08-21T145922.200.json
+
+###
+
+GET http://localhost:8083/api/v1/order/order
+Accept: application/json
+
+<> 2022-08-21T145833.500.json
+
+###
+
+GET http://localhost:8080/api/v1/order/order
+Accept: application/json
+
+<> 2022-08-21T145314.200.json
+
+###
+
+GET http://localhost:8083/api/v1/order/order
+Accept: application/json
+
+<> 2022-08-21T145310.200.json
+
+###
+
+GET http://localhost:8083/api/v1/order/order
+Accept: application/json
+
+<> 2022-08-21T135204.200.json
+
+###
+
+GET http://localhost:8080/api/v1/order/order
+Accept: application/json
+
+<> 2022-08-21T135201.200.json
+
+###
+
+GET http://localhost:8083/api/v1/order/type
+Accept: application/json
+
+<> 2022-08-21T135158.200.json
+
+###
+
+GET http://localhost:8083/api/v1/order/order
+Accept: application/json
+
+<> 2022-08-21T135156.200.json
+
+###
+
+GET http://localhost:8083/api/v1/order/order
+Accept: application/json
+
+<> 2022-08-21T135150.200.json
+
+###
+
+GET http://localhost:8083/api/v1/order/order
+Accept: application/json
+
+<> 2022-08-21T134937.200.json
+
+###
+
+GET http://localhost:8083/api/v1/order/order
+Accept: application/json
+
+<> 2022-08-21T134832.503.json
+
+###
+
+GET http://localhost:8083/api/v1/order/order
+Accept: application/json
+
+<> 2022-08-21T134409.200.json
+
+###
+
+GET http://localhost:8083/api/v1/order/order
+Accept: application/json
+
+<> 2022-08-21T134407.200.json
+
+###
+
+GET http://localhost:8080/api/v1/order/order
+Accept: application/json
+
+<> 2022-08-21T134404.200.json
+
+###
+
+GET http://localhost:8083/api/v1/order/type
+Accept: application/json
+
+<> 2022-08-21T134400.200.json
+
+###
+
+GET http://localhost:8083/api/v1/order/order
+Accept: application/json
+
+<> 2022-08-21T134355.200.json
+
+###
+
+GET http://localhost:8083/api/v1/order/type
+Accept: application/json
+
+###
+
+GET http://localhost:8083/api/v1/order/order
+Accept: application/json
+
+###
+
+GET http://localhost:8083/api/v1/order/order
+Accept: application/json
+
+###
+
+GET http://localhost:8080/api/v1/order/order
+Accept: application/json
+
+<> 2022-08-21T133515.200.json
+
+###
+
+GET http://localhost:8083/api/v1/order/order
+Accept: application/json
+
+###
+
+GET http://localhost:8083/api/v1/order/order
+Accept: application/json
+
+###
+
+GET http://localhost:8083/api/v1/order/order
+Accept: application/json
+
+###
+
+GET http://localhost:8083/api/v1/order/order
+Accept: application/json
+
+###
+
+GET http://localhost:8083/api/v1/order/order
+Accept: application/json
+
+###
+
+GET http://localhost:8080/api/v1/order/order
+Accept: application/json
+
+<> 2022-08-21T133209.200.json
+
+###
+
