@@ -1,14 +1,14 @@
 ### Create order
-POST http://localhost:8083/api/v1/order/order
+POST http://localhost:8083/api/v1/order/
 Content-Type: application/json
 
 {
-  "name": "Fix my conditioner",
+  "name": "I need your help so much, so so",
   "orderStatus": "DRAFT",
-  "customerId": 1,
+  "customerId": 5,
   "specialistId": null,
   "category": "Air conditioning master",
-  "description": "I need to fix my air conditioner, there is 39 at the street"
+  "description": "I need to fix my air conditioner, so much"
 }
 
 ### Create order

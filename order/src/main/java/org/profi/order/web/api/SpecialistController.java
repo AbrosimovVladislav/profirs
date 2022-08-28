@@ -15,14 +15,14 @@ import org.springframework.web.bind.annotation.RestController;
 @Slf4j
 @RestController
 //@MeasurePerformance
-@RequestMapping("api/v1/order")
+@RequestMapping("api/v1/specialist")
 @RequiredArgsConstructor
 public class SpecialistController {
 
   private final SpecialistService specialistService;
   private final SpecialistMapper specialistMapper;
 
-  @GetMapping(value = "/specialist", produces = MediaType.APPLICATION_JSON_VALUE)
+  @GetMapping(value = "/", produces = MediaType.APPLICATION_JSON_VALUE)
   public List<SpecialistDto> getSpecialists() {
     List<Specialist> specialists = specialistService.getAll();
     List<SpecialistDto> dtos = specialistMapper.specialistsToDtos(specialists);

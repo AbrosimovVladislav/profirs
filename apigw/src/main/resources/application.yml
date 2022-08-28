@@ -16,7 +16,7 @@ spring:
         - id: order
           uri: lb://ORDER
           predicates:
-            - Path=/api/v1/order/**
+            - Path=/api/v1/**
 
 management:
   endpoints:

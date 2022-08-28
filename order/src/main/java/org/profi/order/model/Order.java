@@ -12,10 +12,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+
+import lombok.*;
 import lombok.experimental.Accessors;
 
 @Getter
@@ -50,10 +48,8 @@ public class Order {
   private String description;
 
   public enum OrderStatus {
-    DRAFT, PUBLISHED, IN_PROGRESS, RESOLVED, REJECTED
+    DRAFT, PUBLISHED, IN_PROGRESS, RESOLVED, CLOSED
   }
-
-
 }
 
 
