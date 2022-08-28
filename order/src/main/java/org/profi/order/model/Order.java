@@ -12,10 +12,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+
+import lombok.*;
 import lombok.experimental.Accessors;
 
 @Getter
@@ -25,6 +23,8 @@ import lombok.experimental.Accessors;
 @AllArgsConstructor
 @Accessors(chain = true)
 public class Order {
+
+  public static final String ORDER_ID = "order_id";
 
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -50,10 +50,8 @@ public class Order {
   private String description;
 
   public enum OrderStatus {
-    DRAFT, PUBLISHED, IN_PROGRESS, RESOLVED, REJECTED
+    DRAFT, PUBLISHED, IN_PROGRESS, RESOLVED, CLOSED
   }
-
-
 }
 
 

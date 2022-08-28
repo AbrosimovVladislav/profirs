@@ -1,42 +1,25 @@
-### Set order in progress with fined specialist
-PATCH http://localhost:8083/api/v1/order/order
+### Set order to publish
+PATCH http://localhost:8083/api/v1/order/publish/5
+Content-Type: application/json
+
+### Set order back to draft
+PATCH http://localhost:8083/api/v1/order/draft/5
+Content-Type: application/json
+
+### Set order to in_progress
+PATCH http://localhost:8083/api/v1/order/inProgress
 Content-Type: application/json
 
 {
-  "orderId": 1,
-  "orderStatus": "IN_PROGRESS",
-  "specialistId": 1
+  "orderId": 6,
+  "name": "I need to fix my air conditioner, so much, Plz",
+  "specialistId": 2
 }
 
-### Edit order
-
-PATCH http://localhost:8083/api/v1/order/order
+### Set order to closed
+PATCH http://localhost:8083/api/v1/order/close/5
 Content-Type: application/json
 
-{
-  "orderId": 2,
-  "name": "English IELTS preparation",
-  "description": "I need to finish my IELTS preparation in 3 weeks"
-}
-
-### Set order in progress with fined specialist local
-PATCH http://localhost:38083/api/v1/order/order
+### Set order to resolved
+PATCH http://localhost:8083/api/v1/order/resolve/5
 Content-Type: application/json
-
-{
-  "orderId": 1,
-  "orderStatus": "IN_PROGRESS",
-  "specialistId": 1
-}
-
-### Edit order local
-
-PATCH http://localhost:38083/api/v1/order/order
-Content-Type: application/json
-
-{
-  "orderId": 2,
-  "name": "English IELTS preparation",
-  "description": "I need to finish my IELTS preparation in 3 weeks"
-}
-
