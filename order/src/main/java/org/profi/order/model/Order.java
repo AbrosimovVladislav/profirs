@@ -24,6 +24,8 @@ import lombok.experimental.Accessors;
 @Accessors(chain = true)
 public class Order {
 
+  public static final String ORDER_ID = "order_id";
+
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Long orderId;

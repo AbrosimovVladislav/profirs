@@ -6,7 +6,6 @@ Content-Type: application/json
   "name": "I need your help so much, so so",
   "orderStatus": "DRAFT",
   "customerId": 5,
-  "specialistId": null,
   "category": "Air conditioning master",
   "description": "I need to fix my air conditioner, so much"
 }
@@ -19,7 +18,6 @@ Content-Type: application/json
   "name": "English IELTS preparation",
   "orderStatus": "DRAFT",
   "customerId": 2,
-  "specialistId": null,
   "category": "English tutor",
   "description": "I need to learn specific english for prepare to IELTS exam"
 }
@@ -32,7 +30,6 @@ Content-Type: application/json
   "name": "Fix my conditioner",
   "orderStatus": "DRAFT",
   "customerId": 1,
-  "specialistId": null,
   "category": "Air conditioning master",
   "description": "I need to fix my air conditioner, there is 39 at the street"
 }
@@ -45,7 +42,6 @@ Content-Type: application/json
   "name": "English IELTS preparation",
   "orderStatus": "DRAFT",
   "customerId": 2,
-  "specialistId": null,
   "category": "English tutor",
   "description": "I need to learn specific english for prepare to IELTS exam"
 }
