@@ -1,4 +1,4 @@
-git checkout master
+git checkout develop
 git pull
 
 mvn clean package -P build-docker-image

@@ -8,7 +8,7 @@ import org.profi.order.service.OrderService;
 import org.profi.order.web.dto.OrderDto;
 import org.profi.order.web.mapper.OrderMapper;
 import org.profi.order.web.request.OrderCreationRequest;
-import org.profi.order.web.request.OrderUpdateRequest;
+import org.profi.order.web.request.OrderSetInProgressRequest;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PatchMapping;
@@ -55,8 +55,8 @@ public class OrderController {
   }
 
   @PatchMapping(value = "/inProgress", produces = MediaType.APPLICATION_JSON_VALUE)
-  public OrderDto inProgressOrder(@RequestBody OrderUpdateRequest request) {
-    Order order = orderMapper.updateRequestToOrder(request);
+  public OrderDto inProgressOrder(@RequestBody OrderSetInProgressRequest request) {
+    Order order = orderMapper.setInProgressRequestToOrder(request);
     Order inProgressed = orderService.inProgress(order);
     OrderDto orderDto = orderMapper.orderToDto(inProgressed);
     log.info("Order set in progress: " + orderDto);

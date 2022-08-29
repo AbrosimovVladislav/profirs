@@ -10,7 +10,7 @@ import org.profi.order.service.OrderService;
 import org.profi.order.service.SpecialistService;
 import org.profi.order.web.dto.OrderDto;
 import org.profi.order.web.request.OrderCreationRequest;
-import org.profi.order.web.request.OrderUpdateRequest;
+import org.profi.order.web.request.OrderSetInProgressRequest;
 import org.springframework.stereotype.Component;
 
 @Component
@@ -43,26 +43,9 @@ public class OrderMapper {
         .build();
   }
 
-  public Order updateRequestToOrder(OrderUpdateRequest request) {
+  public Order setInProgressRequestToOrder(OrderSetInProgressRequest request) {
     Order order = orderService.findById(request.getOrderId());
-    if (request.getName() != null) {
-      order.setName(request.getName());
-    }
-    if (request.getOrderStatus() != null) {
-      order.setOrderStatus(request.getOrderStatus());
-    }
-    if (request.getCustomerId() != null) {
-      order.setCustomer(customerService.findById(request.getCustomerId()));
-    }
-    if (request.getSpecialistId() != null) {
-      order.setSpecialist(specialistService.findById(request.getSpecialistId()));
-    }
-    if (request.getCategory() != null) {
-      order.setCategory(categoryService.findByShowName(request.getCategory()));
-    }
-    if (request.getDescription() != null) {
-      order.setDescription(request.getDescription());
-    }
+    order.setSpecialist(specialistService.findById(request.getSpecialistId()));
     return order;
   }
 
@@ -70,11 +53,6 @@ public class OrderMapper {
     return new Order()
         .setName(request.getName())
         .setCustomer(customerService.findById(request.getCustomerId()))
-        .setOrderStatus(request.getOrderStatus())
-        .setSpecialist(
-            request.getSpecialistId() != null
-                ? specialistService.findById(request.getSpecialistId())
-                : null)
         .setCategory(categoryService.findByShowName(request.getCategory()))
         .setDescription(request.getDescription());
   }
