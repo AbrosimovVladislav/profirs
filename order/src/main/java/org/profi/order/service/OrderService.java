@@ -31,7 +31,9 @@ public class OrderService {
 
   public Order create(Order order) {
     order.setOrderStatus(DRAFT);
-    return save(order);
+    Order saved = save(order);
+    orderHistoryService.add(saved, null, DRAFT);
+    return saved;
   }
 
   public Order findById(Long orderId) {
