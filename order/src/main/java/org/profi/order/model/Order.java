@@ -4,6 +4,7 @@ import static org.profi.order.model.Category.CATEGORY_ID;
 import static org.profi.order.model.Customer.CUSTOMER_ID;
 import static org.profi.order.model.Specialist.SPECIALIST_ID;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
@@ -36,6 +37,7 @@ public class Order {
   @JoinColumn(name = CUSTOMER_ID, nullable = false)
   private Customer customer;
 
+  @Column(nullable = false)
   @Enumerated(EnumType.STRING)
   private OrderStatus orderStatus;
 
