@@ -1,7 +1,7 @@
 git checkout master
 git pull
 
-#mvn clean package -P build-docker-image
+mvn clean package -P build-docker-image
 
 docker-compose down
 docker-compose kill

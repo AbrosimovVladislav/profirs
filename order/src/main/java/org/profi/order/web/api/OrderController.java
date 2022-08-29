@@ -10,7 +10,13 @@ import org.profi.order.web.mapper.OrderMapper;
 import org.profi.order.web.request.OrderCreationRequest;
 import org.profi.order.web.request.OrderUpdateRequest;
 import org.springframework.http.MediaType;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PatchMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 @Slf4j
 @RestController
@@ -26,14 +32,14 @@ public class OrderController {
   @PostMapping(value = "/", produces = MediaType.APPLICATION_JSON_VALUE)
   public OrderDto createOrder(@RequestBody OrderCreationRequest request) {
     Order order = orderMapper.creationRequestToOrder(request);
-    Order saved = orderService.save(order);
+    Order saved = orderService.create(order);
     OrderDto savedDto = orderMapper.orderToDto(saved);
     log.info("Create order request: " + request);
     return savedDto;
   }
 
   @PatchMapping(value = "/publish/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
-  public OrderDto publishOrder(@PathVariable Long id){
+  public OrderDto publishOrder(@PathVariable Long id) {
     Order published = orderService.publish(id);
     OrderDto orderDto = orderMapper.orderToDto(published);
     log.info("Order published: " + orderDto);
@@ -41,7 +47,7 @@ public class OrderController {
   }
 
   @PatchMapping(value = "/draft/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
-  public OrderDto draftOrder(@PathVariable Long id){
+  public OrderDto draftOrder(@PathVariable Long id) {
     Order drafted = orderService.draft(id);
     OrderDto orderDto = orderMapper.orderToDto(drafted);
     log.info("Order drafted: " + orderDto);
@@ -49,7 +55,7 @@ public class OrderController {
   }
 
   @PatchMapping(value = "/inProgress", produces = MediaType.APPLICATION_JSON_VALUE)
-  public OrderDto inProgressOrder(@RequestBody OrderUpdateRequest request){
+  public OrderDto inProgressOrder(@RequestBody OrderUpdateRequest request) {
     Order order = orderMapper.updateRequestToOrder(request);
     Order inProgressed = orderService.inProgress(order);
     OrderDto orderDto = orderMapper.orderToDto(inProgressed);
@@ -58,7 +64,7 @@ public class OrderController {
   }
 
   @PatchMapping(value = "/close/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
-  public OrderDto closeOrder(@PathVariable Long id){
+  public OrderDto closeOrder(@PathVariable Long id) {
     Order closed = orderService.close(id);
     OrderDto orderDto = orderMapper.orderToDto(closed);
     log.info("Order closed: " + orderDto);
@@ -66,7 +72,7 @@ public class OrderController {
   }
 
   @PatchMapping(value = "/resolve/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
-  public OrderDto resolveOrder(@PathVariable Long id){
+  public OrderDto resolveOrder(@PathVariable Long id) {
     Order resolved = orderService.resolve(id);
     OrderDto orderDto = orderMapper.orderToDto(resolved);
     log.info("Order resolved: " + orderDto);
