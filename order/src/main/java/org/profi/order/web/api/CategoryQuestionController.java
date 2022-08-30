@@ -5,6 +5,8 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.profi.order.model.CategoryQuestion;
 import org.profi.order.service.CategoryQuestionService;
+import org.profi.order.web.dto.CategoryQuestionDto;
+import org.profi.order.web.mapper.CategoryQuestionAnswerMapper;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -19,12 +21,14 @@ import org.springframework.web.bind.annotation.RestController;
 public class CategoryQuestionController {
 
   private final CategoryQuestionService categoryQuestionService;
+  private final CategoryQuestionAnswerMapper categoryQuestionAnswerMapper;
 
   @GetMapping(value = "/{categoryName}", produces = MediaType.APPLICATION_JSON_VALUE)
-  public List<CategoryQuestion> getQuestionsByCategory(@PathVariable String categoryName) {
-    List<CategoryQuestion> categories = categoryQuestionService.getByCategoryName(categoryName);
-    log.info("GetQuestionsByCategory request: " + categories);
-    return categories;
+  public List<CategoryQuestionDto> getQuestionsByCategory(@PathVariable String categoryName) {
+    List<CategoryQuestion> questions = categoryQuestionService.getByCategoryName(categoryName);
+    List<CategoryQuestionDto> dtos = categoryQuestionAnswerMapper.questionsToDtos(questions);
+    log.info("GetQuestionsByCategory request: " + dtos);
+    return dtos;
   }
 
 }
