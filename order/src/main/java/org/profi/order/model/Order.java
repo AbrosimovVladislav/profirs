@@ -4,6 +4,7 @@ import static org.profi.order.model.Category.CATEGORY_ID;
 import static org.profi.order.model.Customer.CUSTOMER_ID;
 import static org.profi.order.model.Specialist.SPECIALIST_ID;
 
+import java.util.List;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
@@ -13,8 +14,11 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-
-import lombok.*;
+import javax.persistence.OneToMany;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 import lombok.experimental.Accessors;
 
 @Getter
@@ -26,6 +30,7 @@ import lombok.experimental.Accessors;
 public class Order {
 
   public static final String ORDER_ID = "order_id";
+  public static final String ORDER_TABLE = "order";
 
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -50,6 +55,9 @@ public class Order {
   private Category category;
 
   private String description;
+
+  @OneToMany(mappedBy = ORDER_TABLE)
+  private List<CategoryProperty> categoryProperties;
 
   public enum OrderStatus {
     DRAFT, PUBLISHED, IN_PROGRESS, RESOLVED, CLOSED

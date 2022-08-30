@@ -1,6 +1,5 @@
 package org.profi.order.web.request;
 
-import java.util.List;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -10,12 +9,9 @@ import lombok.experimental.Accessors;
 @Accessors(chain = true)
 @AllArgsConstructor
 @NoArgsConstructor
-public class OrderCreationRequest {
+public class CustomerAnswer {
 
-  private String name;
-  private Long customerId;
-  private String category;
-  private String description;
-  private List<CustomerAnswer> customerAnswers;
+  private String answer;
+  private String propertyName;
 
 }

@@ -24,6 +24,7 @@ public class OrderService {
   private final OrderValidator validator;
 
   private final OrderHistoryService orderHistoryService;
+  private final CategoryPropertiesService categoryPropertiesService;
 
   public List<Order> getAll() {
     return orderRepo.findAll();
@@ -32,6 +33,7 @@ public class OrderService {
   public Order create(Order order) {
     order.setOrderStatus(DRAFT);
     Order saved = save(order);
+    categoryPropertiesService.savePropertiesForOrder(order);
     orderHistoryService.add(saved, null, DRAFT);
     return saved;
   }

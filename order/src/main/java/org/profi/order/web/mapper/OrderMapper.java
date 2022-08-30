@@ -20,8 +20,9 @@ public class OrderMapper {
   private final CustomerService customerService;
   private final SpecialistService specialistService;
   private final CategoryService categoryService;
-
   private final OrderService orderService;
+  private final CategoryQuestionAnswerMapper categoryQuestionAnswerMapper;
+  private final CategoryPropertyMapper categoryPropertyMapper;
 
   public List<OrderDto> ordersToDtos(List<Order> orders) {
     return orders.stream().map(this::orderToDto).collect(Collectors.toList());
@@ -40,6 +41,7 @@ public class OrderMapper {
         .specialistName(
             order.getSpecialist() != null ? order.getSpecialist().getPerson().getName() : null)
         .orderStatus(order.getOrderStatus().toString())
+        .categoryProperties(categoryPropertyMapper.propertiesToDtos(order.getCategoryProperties()))
         .build();
   }
 
@@ -54,6 +56,8 @@ public class OrderMapper {
         .setName(request.getName())
         .setCustomer(customerService.findById(request.getCustomerId()))
         .setCategory(categoryService.findByShowName(request.getCategory()))
+        .setCategoryProperties(
+            categoryQuestionAnswerMapper.answersToProperties(request.getCustomerAnswers()))
         .setDescription(request.getDescription());
   }
 }

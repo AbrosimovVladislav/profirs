@@ -1,5 +1,6 @@
 package org.profi.order.web.dto;
 
+import java.util.List;
 import lombok.Builder;
 import lombok.Data;
 
@@ -16,4 +17,5 @@ public class OrderDto {
   private Long specialistId;
   private String specialistName;
   private String orderStatus;
+  private List<CategoryPropertyDto> categoryProperties;
 }
