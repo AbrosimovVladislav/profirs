@@ -14,7 +14,7 @@ public class OrderCreationRequest {
 
   private String name;
   private Long customerId;
-  private String category;
+  private Long categoryId;
   private String description;
   private List<CustomerAnswer> customerAnswers;
 

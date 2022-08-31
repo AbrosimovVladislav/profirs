@@ -10,6 +10,7 @@ public class OrderDto {
 
   private Long orderId;
   private String name;
+  private Long categoryId;
   private String category;
   private String description;
   private Long customerId;

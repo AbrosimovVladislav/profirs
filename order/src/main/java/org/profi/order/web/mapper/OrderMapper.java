@@ -32,6 +32,7 @@ public class OrderMapper {
     return OrderDto.builder()
         .orderId(order.getOrderId())
         .name(order.getName())
+        .categoryId(order.getCategory().getCategoryId())
         .category(order.getCategory().getShowName())
         .description(order.getDescription())
         .customerId(order.getCustomer().getCustomerId())
@@ -55,7 +56,7 @@ public class OrderMapper {
     return new Order()
         .setName(request.getName())
         .setCustomer(customerService.findById(request.getCustomerId()))
-        .setCategory(categoryService.findByShowName(request.getCategory()))
+        .setCategory(categoryService.findById(request.getCategoryId()))
         .setCategoryProperties(
             categoryQuestionAnswerMapper.answersToProperties(request.getCustomerAnswers()))
         .setDescription(request.getDescription());
