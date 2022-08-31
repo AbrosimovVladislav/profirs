@@ -1,9 +1,11 @@
 package org.profi.order.model;
 
+import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -27,6 +29,9 @@ public class Category {
   private String firstLevel;
   private String secondLevel;
   private String thirdLevel;
+
+  @ManyToMany(mappedBy = "categories")
+  List<Question> questions;
 
   private String showName;
 }

@@ -3,7 +3,7 @@ package org.profi.order.web.api;
 import java.util.List;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.profi.order.model.CategoryQuestion;
+import org.profi.order.model.Question;
 import org.profi.order.service.CategoryQuestionService;
 import org.profi.order.web.dto.CategoryQuestionDto;
 import org.profi.order.web.mapper.CategoryQuestionAnswerMapper;
@@ -25,7 +25,7 @@ public class CategoryQuestionController {
 
   @GetMapping(value = "/{categoryId}", produces = MediaType.APPLICATION_JSON_VALUE)
   public List<CategoryQuestionDto> getQuestionsByCategoryId(@PathVariable Long categoryId) {
-    List<CategoryQuestion> questions = categoryQuestionService.getByCategoryId(categoryId);
+    List<Question> questions = categoryQuestionService.getByCategoryId(categoryId);
     List<CategoryQuestionDto> dtos = categoryQuestionAnswerMapper.questionsToDtos(questions);
     log.info("GetQuestionsByCategory request: " + dtos);
     return dtos;
