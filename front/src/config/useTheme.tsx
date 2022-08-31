@@ -1,16 +1,14 @@
-import { MantineThemeOverride } from '@mantine/core'
-import { useColorScheme } from '@mantine/hooks'
+import { MantineThemeOverride } from '@mantine/core';
+import { useColorScheme } from '@mantine/hooks';
 
 const useTheme = () => {
-    const themePref = useColorScheme()
-
-    console.log(themePref)
+    const themePref = useColorScheme();
 
     const themeConfig: MantineThemeOverride | undefined = {
         colorScheme: themePref,
-    }
+    };
 
-    return themeConfig
-}
+    return themeConfig;
+};
 
-export default useTheme
+export default useTheme;
