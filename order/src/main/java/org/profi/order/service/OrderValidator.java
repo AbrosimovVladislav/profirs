@@ -39,7 +39,8 @@ public class OrderValidator {
 
   public void validateBeforeClose(Order order) {
     Order.OrderStatus orderStatus = order.getOrderStatus();
-    if (!orderStatus.equals(Order.OrderStatus.PUBLISHED)) {
+    if (!orderStatus.equals(Order.OrderStatus.PUBLISHED)
+        && !orderStatus.equals(Order.OrderStatus.DRAFT)) {
       throw new CannotUpdateOrderStatusException(orderStatus, Order.OrderStatus.CLOSED);
     }
   }
