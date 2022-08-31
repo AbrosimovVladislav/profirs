@@ -11,4 +11,8 @@ public class CategoryNotFoundException extends RuntimeException {
   public CategoryNotFoundException(String categoryShowName) {
     super("There is no category with show name: " + categoryShowName);
   }
+
+  public CategoryNotFoundException(Long categoryId) {
+    super("There is no category with id: " + categoryId);
+  }
 }

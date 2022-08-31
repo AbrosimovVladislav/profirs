@@ -14,8 +14,8 @@ public class CategoryQuestionService {
   private final CategoryQuestionRepo categoryQuestionRepo;
   private final CategoryService categoryService;
 
-  public List<CategoryQuestion> getByCategoryName(String categoryName) {
-    Category category = categoryService.findByShowName(categoryName);
+  public List<CategoryQuestion> getByCategoryId(Long categoryId) {
+    Category category = categoryService.findById(categoryId);
     return categoryQuestionRepo.findByCategory(category);
   }
 }

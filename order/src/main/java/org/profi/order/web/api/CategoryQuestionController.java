@@ -23,9 +23,9 @@ public class CategoryQuestionController {
   private final CategoryQuestionService categoryQuestionService;
   private final CategoryQuestionAnswerMapper categoryQuestionAnswerMapper;
 
-  @GetMapping(value = "/{categoryName}", produces = MediaType.APPLICATION_JSON_VALUE)
-  public List<CategoryQuestionDto> getQuestionsByCategory(@PathVariable String categoryName) {
-    List<CategoryQuestion> questions = categoryQuestionService.getByCategoryName(categoryName);
+  @GetMapping(value = "/{categoryId}", produces = MediaType.APPLICATION_JSON_VALUE)
+  public List<CategoryQuestionDto> getQuestionsByCategoryId(@PathVariable Long categoryId) {
+    List<CategoryQuestion> questions = categoryQuestionService.getByCategoryId(categoryId);
     List<CategoryQuestionDto> dtos = categoryQuestionAnswerMapper.questionsToDtos(questions);
     log.info("GetQuestionsByCategory request: " + dtos);
     return dtos;
