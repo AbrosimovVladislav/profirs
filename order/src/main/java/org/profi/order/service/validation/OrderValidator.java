@@ -1,12 +1,22 @@
-package org.profi.order.service;
+package org.profi.order.service.validation;
 
+import java.util.List;
+import lombok.RequiredArgsConstructor;
 import org.profi.order.exception.CannotUpdateOrderStatusException;
+import org.profi.order.exception.NotAllRequiredFieldsFilledException;
+import org.profi.order.model.Category;
+import org.profi.order.model.CategoryProperty;
 import org.profi.order.model.Order;
+import org.profi.order.model.Question;
 import org.profi.order.model.Specialist;
+import org.profi.order.service.CategoryQuestionService;
 import org.springframework.stereotype.Component;
 
 @Component
+@RequiredArgsConstructor
 public class OrderValidator {
+
+  private final CategoryQuestionService categoryQuestionService;
 
   public void validateBeforePublish(Order order) {
     Order.OrderStatus orderStatus = order.getOrderStatus();
@@ -15,7 +25,7 @@ public class OrderValidator {
         && !orderStatus.equals(Order.OrderStatus.CLOSED)) {
       throw new CannotUpdateOrderStatusException(orderStatus, Order.OrderStatus.PUBLISHED);
     }
-    //ToDo implement validation of required properties
+
     validateRequiredCategoryProperties(order);
   }
 
@@ -30,7 +40,6 @@ public class OrderValidator {
     Order.OrderStatus orderStatus = order.getOrderStatus();
     Specialist specialist = order.getSpecialist();
 
-    //ToDo check if condition is correct
     if (!orderStatus.equals(Order.OrderStatus.PUBLISHED)
         || specialist == null || specialist.getPerson() == null) {
       throw new CannotUpdateOrderStatusException(orderStatus, Order.OrderStatus.IN_PROGRESS);
@@ -52,8 +61,22 @@ public class OrderValidator {
     }
   }
 
-  //ToDo implement validation of required properties
   private void validateRequiredCategoryProperties(Order order) {
+    Category category = order.getCategory();
+    List<Question> questions = categoryQuestionService.getByCategoryId(category.getCategoryId());
+    List<String> propertyNames = order.getCategoryProperties().stream()
+        .map(CategoryProperty::getKey).toList();
+
+    List<String> notFilledProperties = questions.stream()
+        .filter(Question::getRequired)
+        .map(Question::getPropertyName)
+        .filter(questionPropertyName -> !propertyNames.contains(questionPropertyName)).toList();
+
+    if (notFilledProperties.size() > 0) {
+      throw new NotAllRequiredFieldsFilledException(String.join(",", notFilledProperties)
+      );
+    }
 
   }
+
 }

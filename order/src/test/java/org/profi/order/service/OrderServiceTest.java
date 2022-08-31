@@ -29,6 +29,7 @@ import org.profi.order.model.OrderHistory;
 import org.profi.order.model.Person;
 import org.profi.order.model.Specialist;
 import org.profi.order.repo.OrderRepo;
+import org.profi.order.service.validation.OrderValidator;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
@@ -39,6 +40,9 @@ public class OrderServiceTest {
 
   @Mock
   OrderHistoryService orderHistoryService;
+
+  @Mock
+  CategoryQuestionService categoryQuestionService;
 
   @Spy
   OrderValidator orderValidator;
@@ -73,7 +77,7 @@ public class OrderServiceTest {
   }
 
   @Test
-  public void testSpecialistDeletingWhenPublishFromInProgress(){
+  public void testSpecialistDeletingWhenPublishFromInProgress() {
     Order inProgressOrder = getByStatusWithSpecialist(IN_PROGRESS);
     Order published = getByStatus(PUBLISHED);
 

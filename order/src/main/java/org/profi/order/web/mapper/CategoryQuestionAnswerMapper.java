@@ -1,5 +1,6 @@
 package org.profi.order.web.mapper;
 
+import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;
 import org.profi.order.model.CategoryProperty;
@@ -12,6 +13,9 @@ import org.springframework.stereotype.Component;
 public class CategoryQuestionAnswerMapper {
 
   public List<CategoryProperty> answersToProperties(List<CustomerAnswer> customerAnswers) {
+    if (customerAnswers == null) {
+      return Collections.emptyList();
+    }
     return customerAnswers.stream().map(this::answerToProperty).collect(Collectors.toList());
   }
 
