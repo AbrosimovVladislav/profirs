@@ -1,7 +1,7 @@
 import type { NextPage } from 'next';
 import Head from 'next/head';
 
-const Home: NextPage = () => {
+const Specialists: NextPage = () => {
   return (
     <>
       <Head>
@@ -12,9 +12,9 @@ const Home: NextPage = () => {
         />
         <meta name="keywords" content="service, tutors" />
       </Head>
-      <span>Home</span>
+      <span>Specialists</span>
     </>
   );
 };
 
-export default Home;
+export default Specialists;

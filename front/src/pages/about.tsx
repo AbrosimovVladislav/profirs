@@ -1,11 +1,20 @@
-import React from 'react'
+import type { NextPage } from 'next';
+import Head from 'next/head';
 
-const index = () => {
-    return (
-        <div>
-            This is <b>index</b> page
-        </div>
-    )
-}
+const About: NextPage = () => {
+  return (
+    <>
+      <Head>
+        <title>Profi.rs</title>
+        <meta
+          name="description"
+          content="Platform for finding any service you need."
+        />
+        <meta name="keywords" content="service, tutors" />
+      </Head>
+      <span>About</span>
+    </>
+  );
+};
 
-export default index
+export default About;
