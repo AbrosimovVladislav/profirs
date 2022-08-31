@@ -28,6 +28,13 @@ public class OrderController {
   private final OrderService orderService;
   private final OrderMapper orderMapper;
 
+  @GetMapping(value = "/{orderId}", produces = MediaType.APPLICATION_JSON_VALUE)
+  public OrderDto getOrderById(@PathVariable Long orderId) {
+    Order order = orderService.findById(orderId);
+    OrderDto dto = orderMapper.orderToDto(order);
+    log.info("GetOrderById request: " + dto);
+    return dto;
+  }
 
   @PostMapping(value = "/", produces = MediaType.APPLICATION_JSON_VALUE)
   public OrderDto createOrder(@RequestBody OrderCreationRequest request) {
