@@ -32,6 +32,8 @@ public class CategoryQuestion {
 
   private String possibleAnswers;
 
+  private Boolean required;
+
   @ManyToOne
   @JoinColumn(name = CATEGORY_ID, nullable = false)
   private Category category;

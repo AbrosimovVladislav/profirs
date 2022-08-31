@@ -32,6 +32,7 @@ public class CategoryQuestionAnswerMapper {
         .question(question.getQuestion())
         .possibleAnswers(question.getPossibleAnswers())
         .propertyName(question.getPropertyName())
+        .required(question.getRequired())
         .build();
   }
 }

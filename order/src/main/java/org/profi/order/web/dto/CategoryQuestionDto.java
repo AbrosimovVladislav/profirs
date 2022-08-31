@@ -11,5 +11,6 @@ public class CategoryQuestionDto {
   private String question;
   private String propertyName;
   private String possibleAnswers;
+  private Boolean required;
   private String category;
 }
