@@ -1,6 +1,11 @@
 # Good service without name
 
 ## FrontEnd 
+### Starting web app
+1) `cd front`
+2) `npm i`
+3) `npm run dev` and the app will open up on http://localhost:3000/
+
 ### Starting services
 
 For starting all backend services locally u can use 2 options:
