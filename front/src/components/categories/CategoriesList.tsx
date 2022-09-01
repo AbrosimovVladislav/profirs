@@ -9,7 +9,7 @@ const CategoriesList = () => {
     <Grid gutter="md">
       {footerSections.map((el) => (
         <Grid.Col span={6} lg={3} key={el.id}>
-          <ListWithTitle title={el.title} items={el.children} />
+          <ListWithTitle title={el.title} sections={el.children} />
         </Grid.Col>
       ))}
     </Grid>
