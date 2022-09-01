@@ -25,7 +25,7 @@ public class CategoryController {
   @GetMapping(value = "/", produces = MediaType.APPLICATION_JSON_VALUE)
   public List<CategoryDto> getCategories() {
     List<Category> categories = categoryService.getAll();
-    List<CategoryDto> dtos = categoryMapper.categoriesToDtos(categories);
+    List<CategoryDto> dtos = categoryMapper.categoriesToDtosTree(categories);
     log.info("GetCategories request: " + dtos);
     return dtos;
   }

@@ -14,7 +14,8 @@ interface Item {
   children?: any[];
 }
 
-const ListWithTitle = ({ sections, title }: Props) => {
+const ListWithTitle = ({title, sections}: Props) => {
+
   const useStyles = createStyles((theme) => ({
     wrapper: {
       width: 160,
@@ -49,11 +50,11 @@ const ListWithTitle = ({ sections, title }: Props) => {
 
   const links = sections?.map((item: Item, idx: any) => {
     return (
-      <Link
-        key={idx}
-        href={item.link ? `${item.link}` : `categories/${item.id}`}>
-        <Text className={classes.link}>{item.title}</Text>
-      </Link>
+        <Link
+            key={idx}
+            href={item.link ? `${item.link}` : ``}>
+          <Text className={classes.link}>{item.title}</Text>
+        </Link>
     );
   });
 
