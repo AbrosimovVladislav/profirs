@@ -96,7 +96,7 @@ const useStyles = createStyles((theme) => ({
   },
 }));
 interface HeaderProps {
-  links: { link: string; label: string }[];
+  links: { link: string; title: string }[];
 }
 
 export function Header({ links }: HeaderProps) {
@@ -105,7 +105,7 @@ export function Header({ links }: HeaderProps) {
   const router = useRouter();
 
   const items = links.map((link) => (
-    <Link href={link.link} key={link.label}>
+    <Link href={link.link} key={link.title}>
       <a
         className={cx(classes.link, {
           [classes.linkActive]: router.pathname == link.link,
@@ -113,7 +113,7 @@ export function Header({ links }: HeaderProps) {
         onClick={() => {
           close();
         }}>
-        {link.label}
+        {link.title}
       </a>
     </Link>
   ));

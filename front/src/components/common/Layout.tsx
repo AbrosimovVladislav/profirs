@@ -1,5 +1,6 @@
 import { Container, createStyles } from '@mantine/core';
 import React from 'react';
+
 import { Footer } from './Footer';
 import { Header } from './Header';
 
@@ -17,25 +18,19 @@ const Layout = ({ children }: Props) => {
   }));
   const links = [
     {
-      link: '/specialists',
-      label: 'Specialists',
+      title: 'Categories',
+      link: '/categories',
     },
     {
+      title: 'Specialists',
+      link: '/specialists',
+    },
+    {
+      title: 'About',
       link: '/about',
-      label: 'About',
     },
   ];
 
-  const footerSections = [
-    {
-      title: 'Pages',
-      links: links,
-    },
-    {
-      title: 'Sections',
-      links: links,
-    },
-  ];
   const { classes, cx } = useStyles();
 
   return (
@@ -44,7 +39,7 @@ const Layout = ({ children }: Props) => {
       <main style={{ marginBottom: 'auto' }}>
         <Container>{children}</Container>
       </main>
-      <Footer data={footerSections} />
+      <Footer links={links} />
     </div>
   );
 };
