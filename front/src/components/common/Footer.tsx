@@ -10,6 +10,7 @@ import {
   IconBrandYoutube,
   IconBrandInstagram,
 } from '@tabler/icons';
+import ListWithTitle from './ListWithTitle';
 
 const useStyles = createStyles((theme) => ({
   footer: {
@@ -114,34 +115,25 @@ const useStyles = createStyles((theme) => ({
 }));
 
 interface FooterProps {
-  data: {
-    title: string;
-    links: { label: string; link: string }[];
+  links: {
+    title: String;
+    link: String;
   }[];
 }
 
-export function Footer({ data }: FooterProps) {
+export function Footer({ links }: FooterProps) {
   const { classes } = useStyles();
 
-  const groups = data.map((group) => {
-    const links = group.links.map((link, index) => (
-      <Text<'a'>
-        key={index}
-        className={classes.link}
-        component="a"
-        href={link.link}
-        onClick={(event) => event.preventDefault()}>
-        {link.label}
-      </Text>
-    ));
-
-    return (
-      <div className={classes.wrapper} key={group.title}>
-        <Text className={classes.title}>{group.title}</Text>
-        {links}
-      </div>
-    );
-  });
+  const footerSections = [
+    {
+      title: 'Pages',
+      children: links,
+    },
+    {
+      title: 'Sections',
+      children: links,
+    },
+  ];
 
   return (
     <footer className={classes.footer}>
@@ -154,7 +146,15 @@ export function Footer({ data }: FooterProps) {
             Find the specialist you need at the time you need.
           </Text>
         </div>
-        <div className={classes.groups}>{groups}</div>
+        <div className={classes.groups}>
+          {footerSections.map((section, idx) => (
+            <ListWithTitle
+              sections={section.children}
+              title={section.title}
+              key={idx}
+            />
+          ))}
+        </div>
       </Container>
       <Container className={classes.afterFooter}>
         <Text color="dimmed" size="sm">

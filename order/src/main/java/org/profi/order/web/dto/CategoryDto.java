@@ -1,5 +1,6 @@
 package org.profi.order.web.dto;
 
+import java.util.List;
 import lombok.Builder;
 import lombok.Data;
 
@@ -7,9 +8,11 @@ import lombok.Data;
 @Builder
 public class CategoryDto {
 
-  private Long categoryId;
+  private Long id;
   private String firstLevel;
   private String secondLevel;
   private String thirdLevel;
-  private String showName;
+  private String title;
+  private String link;
+  private List<CategoryDto> children;
 }

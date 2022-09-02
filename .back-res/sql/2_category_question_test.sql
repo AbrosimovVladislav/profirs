@@ -87,6 +87,8 @@ INSERT INTO category_question (category_id, question_id ) VALUES (83,1);
 INSERT INTO category_question (category_id, question_id ) VALUES (84,1);
 INSERT INTO category_question (category_id, question_id ) VALUES (85,1);
 INSERT INTO category_question (category_id, question_id ) VALUES (86,1);
+INSERT INTO category_question (category_id, question_id ) VALUES (87,1);
+INSERT INTO category_question (category_id, question_id ) VALUES (88,1);
 
 INSERT INTO category_question (category_id, question_id ) VALUES (1,2);
 INSERT INTO category_question (category_id, question_id ) VALUES (2,2);
@@ -174,4 +176,6 @@ INSERT INTO category_question (category_id, question_id ) VALUES (83,2);
 INSERT INTO category_question (category_id, question_id ) VALUES (84,2);
 INSERT INTO category_question (category_id, question_id ) VALUES (85,2);
 INSERT INTO category_question (category_id, question_id ) VALUES (86,2);
+INSERT INTO category_question (category_id, question_id ) VALUES (87,2);
+INSERT INTO category_question (category_id, question_id ) VALUES (88,2);
 

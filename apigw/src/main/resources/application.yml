@@ -17,6 +17,15 @@ spring:
           uri: lb://ORDER
           predicates:
             - Path=/api/v1/**
+      globalcors:
+        cors-configurations:
+          '[/**]':
+            allowedOrigins: '*'
+            allowedMethods:
+                - GET
+                - PATCH
+                - POST
+                - PUT
 
 management:
   endpoints:
