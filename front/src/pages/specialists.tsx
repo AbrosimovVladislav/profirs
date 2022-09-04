@@ -1,7 +1,19 @@
 import type { NextPage } from 'next';
 import Head from 'next/head';
+import {useEffect} from "react";
+import {useGetSpecialistsByCategoryId} from "../hooks/useGetSpecialistsByCategoryId";
 
 const Specialists: NextPage = () => {
+
+    //ToDo add extracting of id from url??? here
+    const id = 1;
+    const {specialists} = useGetSpecialistsByCategoryId(id);
+
+    //ToDo delete this after showing of specialists
+    useEffect(() => {
+        console.log(specialists)
+    },[specialists])
+
   return (
     <>
       <Head>

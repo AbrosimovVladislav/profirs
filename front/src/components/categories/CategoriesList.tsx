@@ -1,7 +1,7 @@
 import {Grid} from '@mantine/core';
 import React from 'react';
 import ListWithTitle from '../common/ListWithTitle';
-import {useGetCategories} from "../../hooks/useCategories";
+import {useGetCategories} from "../../hooks/useGetCategories";
 
 const CategoriesList = () => {
 

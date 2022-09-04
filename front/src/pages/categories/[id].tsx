@@ -7,7 +7,7 @@ const CategoryDetails: NextPage = () => {
 
     //ToDo add extracting of id from url??? here
     const id = 1;
-    const {questions} = useGetQuestionsByCategoryId(1);
+    const {questions} = useGetQuestionsByCategoryId(id);
 
     //ToDo delete this after showing of questions
     useEffect(() => {
