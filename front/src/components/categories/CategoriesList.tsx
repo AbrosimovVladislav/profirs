@@ -1,11 +1,10 @@
-import {Grid} from '@mantine/core';
+import { Grid } from '@mantine/core';
 import React from 'react';
 import ListWithTitle from '../common/ListWithTitle';
 import {useGetCategories} from "../../hooks/useGetCategories";
 
 const CategoriesList = () => {
-
-  const {categories} = useGetCategories();
+  const { categories } = useGetCategories();
 
   return (
       <Grid gutter="md">

@@ -3,7 +3,7 @@ import { Text, createStyles } from '@mantine/core';
 import Link from 'next/link';
 
 type Props = {
-  sections: any;
+  category: any;
   title: string;
 };
 
@@ -14,8 +14,7 @@ interface Item {
   children?: any[];
 }
 
-const ListWithTitle = ({title, sections}: Props) => {
-
+const ListWithTitle = ({ title, category }: Props) => {
   const useStyles = createStyles((theme) => ({
     wrapper: {
       width: 160,
@@ -48,20 +47,30 @@ const ListWithTitle = ({title, sections}: Props) => {
 
   const { classes } = useStyles();
 
-  const links = sections?.map((item: Item, idx: any) => {
+  const links = category?.children.slice(0, 4).map((item: Item, idx: any) => {
     return (
-        <Link
-            key={idx}
-            href={item.link ? `${item.link}` : ``}>
-          <Text className={classes.link}>{item.title}</Text>
-        </Link>
+      <Link key={idx} href={item.link ? `${item.link}` : ``}>
+        <Text className={classes.link}>{item.title}</Text>
+      </Link>
     );
   });
 
   return (
     <div className={classes.wrapper}>
-      <Text className={classes.title}>{title}</Text>
+      <Link href={category?.link ? `${category.link}` : ``}>
+        <Text
+          variant="link"
+          sx={{ cursor: 'pointer' }}
+          className={classes.title}>
+          {title}
+        </Text>
+      </Link>
       {links}
+      <Link href={category?.link ? `${category.link}` : ``}>
+        <Text variant="link" sx={{ cursor: 'pointer' }}>
+          See all services ({`${category?.children?.length}`})
+        </Text>
+      </Link>
     </div>
   );
 };
