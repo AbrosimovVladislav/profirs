@@ -102,3 +102,22 @@ INSERT INTO public.category (category_id, first_level, second_level, show_name, 
 INSERT INTO public.category (category_id, first_level, second_level, show_name, third_level) VALUES (102, 'Autoinstructor', 'Driving auto auto', 'Driving auto autoinstructor', null);
 INSERT INTO public.category (category_id, first_level, second_level, show_name, third_level) VALUES (103, 'Autoinstructor', 'Motorcycle', 'Motorcycle autoinstructor', null);
 INSERT INTO public.category (category_id, first_level, second_level, show_name, third_level) VALUES (104, 'Autoinstructor', 'Emergency driving', 'Emergency driving autoinstructor', null);
+
+INSERT INTO category (show_name, first_level, second_level, third_level) VALUES ('Beauty master','Beauty master',null,null);
+INSERT INTO category (show_name, first_level, second_level, third_level) VALUES ('Makeup master','Beauty master','Makeup',null);
+INSERT INTO category (show_name, first_level, second_level, third_level) VALUES ('Manicure master','Beauty master','Manicure',null);
+INSERT INTO category (show_name, first_level, second_level, third_level) VALUES ('Hairstyles master','Beauty master','Hairstyles',null);
+INSERT INTO category (show_name, first_level, second_level, third_level) VALUES ('Epilation master','Beauty master','Epilation',null);
+INSERT INTO category (show_name, first_level, second_level, third_level) VALUES ('Stylist master','Beauty master','Stylist',null);
+
+INSERT INTO category (show_name, first_level, second_level, third_level) VALUES ('Freelancer','Freelancer',null,null);
+INSERT INTO category (show_name, first_level, second_level, third_level) VALUES ('Designer','Freelancer','Designer',null);
+INSERT INTO category (show_name, first_level, second_level, third_level) VALUES ('Marketing','Freelancer','Marketing',null);
+INSERT INTO category (show_name, first_level, second_level, third_level) VALUES ('Sys Admin','Freelancer','Sys Admin',null);
+INSERT INTO category (show_name, first_level, second_level, third_level) VALUES ('Translator','Freelancer','Translator',null);
+
+INSERT INTO category (show_name, first_level, second_level, third_level) VALUES ('Autoinstructor','Autoinstructor',null,null);
+INSERT INTO category (show_name, first_level, second_level, third_level) VALUES ('Driving manual autoinstructor','Autoinstructor','Driving manual auto',null);
+INSERT INTO category (show_name, first_level, second_level, third_level) VALUES ('Driving auto autoinstructor','Autoinstructor','Driving auto auto',null);
+INSERT INTO category (show_name, first_level, second_level, third_level) VALUES ('Motorcycle autoinstructor','Autoinstructor','Motorcycle',null);
+INSERT INTO category (show_name, first_level, second_level, third_level) VALUES ('Emergency driving autoinstructor','Autoinstructor','Emergency driving',null);
