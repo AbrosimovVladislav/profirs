@@ -9,6 +9,7 @@ import org.profi.order.web.dto.SpecialistDto;
 import org.profi.order.web.mapper.SpecialistMapper;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -25,6 +26,14 @@ public class SpecialistController {
   @GetMapping(value = "/", produces = MediaType.APPLICATION_JSON_VALUE)
   public List<SpecialistDto> getSpecialists() {
     List<Specialist> specialists = specialistService.getAll();
+    List<SpecialistDto> dtos = specialistMapper.specialistsToDtos(specialists);
+    log.info("GetSpecialists request: " + dtos);
+    return dtos;
+  }
+
+  @GetMapping(value = "/{categoryId}", produces = MediaType.APPLICATION_JSON_VALUE)
+  public List<SpecialistDto> getSpecialistsByCategoryId(@PathVariable Long categoryId) {
+    List<Specialist> specialists = specialistService.findByCategoryId(categoryId);
     List<SpecialistDto> dtos = specialistMapper.specialistsToDtos(specialists);
     log.info("GetSpecialists request: " + dtos);
     return dtos;

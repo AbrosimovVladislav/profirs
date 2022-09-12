@@ -1,8 +1,19 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import Head from 'next/head';
 import type { NextPage } from 'next';
+import {useGetQuestionsByCategoryId} from "../../hooks/useGetQuestionsByCategoryId";
 
 const CategoryDetails: NextPage = () => {
+
+    //ToDo add extracting of id from url??? here
+    const id = 1;
+    const {questions} = useGetQuestionsByCategoryId(id);
+
+    //ToDo delete this after showing of questions
+    useEffect(() => {
+        console.log(questions)
+    },[questions])
+
   return (
     <>
       <Head>
