@@ -16,10 +16,6 @@ interface Item {
 
 const ListWithTitle = ({ title, category }: Props) => {
   const useStyles = createStyles((theme) => ({
-    wrapper: {
-      width: 160,
-    },
-
     link: {
       display: 'block',
       color:
@@ -56,7 +52,7 @@ const ListWithTitle = ({ title, category }: Props) => {
   });
 
   return (
-    <div className={classes.wrapper}>
+    <div>
       <Link href={category?.link ? `${category.link}` : ``}>
         <Text
           variant="link"

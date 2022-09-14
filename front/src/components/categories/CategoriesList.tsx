@@ -8,7 +8,7 @@ const CategoriesList = () => {
 
   return (
     <Grid gutter="md">
-      {categories.map((category) => (
+      {categories?.map((category) => (
         <Grid.Col span={6} lg={3} key={category.id}>
           <ListWithTitle title={category.title} category={category} />
         </Grid.Col>
